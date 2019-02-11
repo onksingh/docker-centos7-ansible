@@ -11,7 +11,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
     rm -f /lib/systemd/system/basic.target.wants/*;\
     rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-COPY ansible.repo /etc/yum.repos.d/ansible.repo
+COPY home:oojah:mqtt.repo /etc/yum.repos.d/home:oojah:mqtt.repo
 
 RUN yum makecache fast \
     && yum --disableplugin=fastestmirror -y install epel-release \
